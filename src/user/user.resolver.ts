@@ -4,5 +4,7 @@ import { User } from './entities/user.entity';
 @Resolver()
 export class UserResolver {
   @Query(() => User)
-  getAll() {}
+  getAll() {
+    console.log("Hello world !");
+  }
 }
