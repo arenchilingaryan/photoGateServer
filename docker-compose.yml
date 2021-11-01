@@ -1,0 +1,13 @@
+version: '3.6'
+services:
+  db:
+    image: postgres:13
+    restart: always
+    env_file:
+      - .env.develop
+    logging:
+      options:
+        max-size: 10m
+        max-file: '3'
+    ports:
+      - '5432:5432'
