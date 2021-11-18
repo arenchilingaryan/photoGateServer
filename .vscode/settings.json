@@ -5,10 +5,10 @@
       "server": "localhost",
       "port": 5432,
       "driver": "PostgreSQL",
-      "name": "localhost",
-      "database": "photogate",
-      "username": "postgres",
-      "password": "1234"
+      "name": "postgres",
+      "database": "dbName",
+      "username": "dbUser",
+      "password": "mySecretPassword"
     }
   ]
 }

@@ -1,24 +1,23 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { UserModule } from './user/user.module';
 import { join } from 'path';
+import { UserModule } from './user/user.module';
+import User from './user/user.model';
+import { databaseConfig } from './common/config/databaseConfig';
 
 @Module({
   imports: [
+    UserModule,
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      context: ({ req }) => ({ req }),
+      debug: false,
     }),
     SequelizeModule.forRoot({
-      dialect: 'mysql',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: '1234',
-      database: 'photogate',
-      models: [],
+      ...databaseConfig,
+      models: [User],
     }),
-    UserModule,
   ],
 })
 export class AppModule {}
