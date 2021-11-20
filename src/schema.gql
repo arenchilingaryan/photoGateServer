@@ -18,7 +18,7 @@ type UserDto {
 }
 
 type Query {
-  getAll(id: Int!): UserDto
+  getUserById(id: Int!): UserDto
 }
 
 type Mutation {

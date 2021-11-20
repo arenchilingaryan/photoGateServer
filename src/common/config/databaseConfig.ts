@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 import { resolve } from 'path';
 import { Dialect } from 'sequelize/types';
 
-dotenv.config({ path: resolve(__dirname, '../../../.env.develop') });
+dotenv.config({ path: resolve(__dirname, '../../../.env') });
 
 const {
   DB_HOST,
