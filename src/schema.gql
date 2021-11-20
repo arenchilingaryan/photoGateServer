@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserDto {
+  id: Int!
+  username: String!
+  password: String!
+  firstName: String!
+  lastName: String!
+  avatar: String
+  email: String!
+  age: Int
+  about: String
+  roles: String
+  country: String!
+  city: String!
+}
+
+type Query {
+  getUserById(id: Int!): UserDto
+}
+
+type Mutation {
+  createUser(data: UserCreateInputDto!): UserDto!
+}
+
+input UserCreateInputDto {
+  username: String!
+  password: String!
+  firstName: String!
+  lastName: String!
+  avatar: String
+  email: String!
+  age: Int
+  about: String
+  roles: String
+  country: String!
+  city: String!
+}
